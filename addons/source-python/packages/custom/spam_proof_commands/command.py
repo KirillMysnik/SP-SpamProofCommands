@@ -1,14 +1,11 @@
 from commands.command import _BaseCommand
 from listeners import OnClientDisconnect
 from messages import SayText2
+from translations.strings import LangStrings
 
 
-# We don't translate this message to avoid extra
-# language/translation lookup operations
-ANTI_SPAM_TEXT = "You're spamming the command"
-
-
-anti_spam_message = SayText2(message=ANTI_SPAM_TEXT)
+strings = LangStrings('spam_proof_commands')
+anti_spam_message = SayText2(message=strings['anti_spam_message'])
 
 # Storage for all instances of inherited from BaseCommand classes
 _spam_proof_commands = []

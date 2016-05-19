@@ -2,7 +2,7 @@ from time import time
 
 from commands.say import say_command_manager
 
-from spam_proof_commands import anti_spam_message, BaseSpamProofCommand
+from spam_proof_commands.command import anti_spam_message, BaseSpamProofCommand
 
 
 class SayCommand(BaseSpamProofCommand):

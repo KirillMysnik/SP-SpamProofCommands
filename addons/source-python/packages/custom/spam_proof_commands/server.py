@@ -4,7 +4,7 @@ from commands.server import server_command_manager
 from core import echo_console
 from entities.constants import WORLD_ENTITY_INDEX
 
-from spam_proof_commands import ANTI_SPAM_TEXT, BaseSpamProofCommand
+from spam_proof_commands.command import BaseSpamProofCommand, strings
 
 
 class ServerCommand(BaseSpamProofCommand):
@@ -18,7 +18,7 @@ class ServerCommand(BaseSpamProofCommand):
             client_time = self.client_timestamps.get(index, 0)
 
             if current_time - client_time < self.timeout:
-                echo_console(ANTI_SPAM_TEXT)
+                echo_console(strings['anti_spam_message'].get_string())
             else:
                 callback(command)
 
